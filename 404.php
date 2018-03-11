@@ -6,6 +6,6 @@
   </head>
   <body>
     <h1>404</h1>
-    <h4>Error request not find <?php echo $_SERVER["REQUEST_URI"] ?></h4>
+    <h4>Error request not find</h4>
   </body>
 </html>
