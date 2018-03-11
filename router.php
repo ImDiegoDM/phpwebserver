@@ -1,7 +1,14 @@
 <?php
+spl_autoload_extensions(".php");
+spl_autoload_register();
 
-if (preg_match('/\.(?:png|jpg|jpeg|gif)$/', $_SERVER["REQUEST_URI"])) {
-    return false;    // serve the requested resource as-is.
+use WebServer\Route;
+
+include 'WebServer\webroutes.php';
+
+$uri = Route::CheckUri($_SERVER["REQUEST_URI"]);
+if ($uri!=null) {
+    $uri->Acess();
 } else {
   http_response_code(404);
   include('404.php');
