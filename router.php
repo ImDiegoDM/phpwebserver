@@ -4,7 +4,7 @@ spl_autoload_register();
 
 use WebServer\Route;
 
-include 'WebServer\webroutes.php';
+include 'WebServer/webroutes.php';
 
 $uri = Route::CheckUri($_SERVER["REQUEST_URI"]);
 if ($uri!=null) {
